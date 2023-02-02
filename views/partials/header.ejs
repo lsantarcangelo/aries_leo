@@ -1,0 +1,81 @@
+<!-- Header del sitio -->
+<header>
+    <div class="top-header">
+        <!-- Menu Comprimido -->
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!-- Barra Busqueda -->
+        <div class="form-header">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <!-- Logo -->
+        <div class="logo-header">
+            <a href="/">
+                <img src="\images\Aries_sin_fondo_0001.png" alt="Logo de Aries">
+            </a>
+        </div>
+        <!-- Account -->
+        <div class="account">                      
+            <% if (locals.isLogged) { %>
+                <div class="account-item">
+                    <img src="/public/images/users/<%= locals.userLogged.image %>">
+                    <p> Hola <%= locals.userLogged.firstName %></p>
+                </div>
+                <div class="account-item">
+                    <a class="nav-link" href="/userProfile">
+                        <p>Mi cuenta</p>
+                    </a>
+                </div>
+                <div class="account-item">
+                    <a class="nav-link" href="/logout">
+                        <p>Logout</p>
+                    </a>
+                </div>
+            <% } else { %>
+                <div class="account-item">
+                    <a class="nav-link" href="/register">
+                        <i class="far fa-user"></i>
+                        <p>Registrarse</p>
+                    </a>                 
+                </div>
+                <div class="account-item">
+                    <a class="nav-link" href="/login">
+                        <i class="fas fa-user"></i>
+                        <p>Iniciar Sesión</p>
+                    </a>
+                </div>
+            <% } %>
+    
+            <div class="account-item">
+                <a href="/productCart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Carrito</p>
+                </a>
+            </div>
+            <div class="account-item">
+                <a href="#">
+                    <i class="far fa-heart"></i>
+                    <p>Favoritos</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Barra de navegacion id="dropUser" role="button"  data-bs-toggle="dropdown" aria-expanded="false" //width="40" style="border-radius: 100%;"-->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Productos</a>
+                <ul>
+                    <li><a href="/products">Hombre</a></li>
+                    <li><a href="/products">Mujer</a></li>
+                    <li><a href="/products">Niños</a></li>
+                    <li><a href="/products">Accesorios</a></li>
+                    <li><a href="/products/create">Crear Nuevo</a></li>
+                </ul>
+            </li>
+            <li><a href="">Sobre Nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+        </ul>
+    </nav>
+</header>

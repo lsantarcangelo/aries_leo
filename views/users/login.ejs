@@ -1,0 +1,59 @@
+<%- include('../partials/head')%>
+    <link rel="stylesheet" href="css\login.css">
+</head>
+
+<body>
+<%- include('../partials/header')%>
+    <main>
+        <!-- Inicio de sesión -->
+        
+        <div class="log-in">
+        <form class="login" action="/login" method="POST" >
+            <h2> YA TENGO UNA CUENTA</h2>
+            <p>PARA INICIAR SESION INGRESE EMAIL Y CONTRASEÑA.</p>            
+            <p>EMAIL</p>    
+            <input 
+            type="text" 
+            name="email" 
+            placeholder="Ej. juanperez@mail.com"
+            value="<%= locals.oldData ? oldData.email : null %>"
+            >
+            <% if (locals.errors && errors.email) { %>
+                <div class="form-error-msg">
+                    <%= errors.email.msg %> 
+                </div>
+            <% } %>
+            <p>CONTRASEÑA</p>    
+            <input type="password" name="password" placeholder="Abcd1234" minlength="6" maxlength="6">
+            <% if (locals.errors && errors.password) { %>
+                <div class="form-error-msg">
+                    <%= errors.password.msg %> 
+                </div>
+            <% } %>
+                    <div class="remember-me">
+                        <label >
+                        <imput type="radio" name="recordame" value="recordame" >Recordarme
+                        </label>    
+                    </div>       
+            </div>
+            <div class="login-but">
+            <input type="submit" class= "submit" value="INICIAR SESION">
+            </div>
+        </form>
+            </div>
+            <div class="crear-cuenta">
+            <h2>CREAR CUENTA</h2>
+            <h3>CREÁ UNA CUENTA Y DISFRUTÁ DE LOS BENEFICIOS:</h3>
+            <ul class="beneficios">
+            <li><i class="fas fa-horse"></i> Realizá tus compras de manera más ágil.</li>
+            <li><i class="fas fa-horse"></i> Guardá múltiples direcciones de envío y facturación.</li>
+            <li><i class="fas fa-horse"></i> Realizá el seguimiento de tus pedidos.</li>
+            <div class="cliccrear"> 
+            <a class= "cc-btn" href="/register">CREAR CUENTA</a> 
+            </div>
+            </div>
+    </main>
+    <%- include('../partials/footer')%>
+    
+</body>
+</html>

@@ -1,0 +1,148 @@
+.top-header {
+    padding-top: 5px;
+    background-color: #f2f0ea;
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 5px solid #25363d;
+}
+
+.form-header input {
+    width: 100%;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+.burger-menu {
+    align-self: center;
+    padding: 0 10px;
+    width: 10%;
+}
+
+.form-header {
+    padding-left: 5px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-header {
+    width: 30%;
+    margin: auto;
+}
+
+.logo-header img {
+    width: 100%;
+    margin: auto;
+}
+
+.account {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account p {
+    display: none;
+}
+
+.account i {
+    padding: 0 6px;
+    font-size: 0.8rem;
+    color: #25363d;
+}
+
+.nav-bar {
+    display: none;
+}
+
+/* Media Query para Tablet */
+@media (min-width: 768px) {
+    .top-header {
+        border-bottom: none;
+    }
+
+    .form-header input {
+        font-size: 0.8rem;
+    }
+
+    .form-header {
+        width: 30%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .account {
+        margin: 0 auto;
+    }
+
+    .account-item {
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    .account-item i {
+        padding: 0 10px;
+        font-size: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .account-item p {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: #25363d;
+        font-size: 0.8rem;
+    }
+
+    .logo-header {
+        width: 20%;
+        margin: auto;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .nav-bar {
+        display: block;
+        padding: 10px;
+        background-color: #25363d;
+    }
+
+    .nav-bar ul li {
+        list-style-type: none;
+        font-size: 1rem;
+    }
+
+    .nav-bar li ul {
+        display: none;
+        position: absolute;
+        background-color: #25363d;
+
+    }
+
+    .nav-bar li ul a {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    .nav-bar li:hover > ul {
+        display: block;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        text-decoration: none;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #f2f0ea;
+    }
+}
