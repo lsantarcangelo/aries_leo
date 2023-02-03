@@ -25,38 +25,51 @@ const accesories = products.filter(function(product){
 
 
 const productsController = {
-
+    //Listado de todos los productos
     list: (req, res) => {
-		res.render('./products/productList', {man, woman, kids, accesories});
-
-    },
-    
-    create: (req, res) => {
-        db.Category.findAll()
-            .then(function(categories) {
-                return res.render('./products/productCreateForm', {categories:categories});
-            })
+        db.Product.findAll()
+            .then(function(products) {
+                res.render('./products/productList', {products:products});
+            })		
     },
 
-    	// Detalle de un producto//
+    //Detalle de un producto//
 	detail: (req, res) => {
 		let product = products.find(element=>element.id == req.params.id)
 		res.render('./products/productDetail', {product});
 	},
+    
+    //Creacion de nuevo producto
+    create: (req, res) => {
+        let findCategories = db.Category.findAll();
+        let findColors = db.Color.findAll();
+        let findSizes = db.Size.findAll();
+        Promise.all([findCategories, findColors, findSizes])
+            .then(function([categories, colors, sizes]) {
+                return res.render('./products/productCreateForm', {
+                    categories:categories,
+                    colors:colors,
+                    sizes:sizes
+                });
+            })
+        // db.Category.findAll()
+        //     .then(function(categories) {
+        //         return res.render('./products/productCreateForm', {categories:categories});
+        //     })
+    },
 
     store: (req, res) => {
-        let newProduct = {
-            'id': products[products.length - 1].id + 1,
+        db.Product.create({
             'name': req.body.name,
             'description': req.body.description,
-            'image': req.file.filename,
-            'category': req.body.category,
-            'color': req.body.color,
-            'size': req.body.size,
-            'price': '1200',
-        };
-        products.push(newProduct);
-        fs.writeFileSync(productsPath, JSON.stringify(products, null, ' '));
+            'product_img': req.file.filename,
+            'category_id': req.body.category,
+            'color_id': req.body.color,
+            'size_id': req.body.size,
+            'stock': req.body.stock,
+            'price': req.body.price,
+            'is_active': 1
+        })
         res.redirect('/products');
     },
 
