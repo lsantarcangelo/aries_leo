@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator'); 
 const db = require('../../database/models');
 
 
@@ -40,18 +41,35 @@ const productsController = {
 
     //Guardado de nuevo producto creado//
     store: (req, res) => {
-        db.Product.create({
-            'name': req.body.name,
-            'description': req.body.description,
-            'product_img': req.file.filename,
-            'category_id': req.body.category,
-            'color_id': req.body.color,
-            'size_id': req.body.size,
-            'stock': req.body.stock,
-            'price': req.body.price,
-            'is_active': 1
-        })
-        res.redirect('/products');
+        const validations = validationResult(req);
+        if (validations.errors.length > 0) {
+            let findCategories = db.Category.findAll();
+            let findColors = db.Color.findAll();
+            let findSizes = db.Size.findAll();
+            Promise.all([findCategories, findColors, findSizes])
+                .then(function([categories, colors, sizes]) {
+                    return res.render('./products/productCreateForm', {
+                        categories:categories,
+                        colors:colors,
+                        sizes:sizes,
+                        errors: validations.mapped(),
+                        oldData: req.body
+                    })
+                })
+        } else {
+            db.Product.create({
+                'name': req.body.name,
+                'description': req.body.description,
+                'product_img': req.file.filename,
+                'category_id': req.body.category,
+                'color_id': req.body.color,
+                'size_id': req.body.size,
+                'stock': req.body.stock,
+                'price': req.body.price,
+                'is_active': 1
+            });
+            res.redirect('/products');
+        }
     },
 
     edit: (req, res) => {
