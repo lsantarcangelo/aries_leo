@@ -10,7 +10,7 @@ const productsController = {
     list: (req, res) => {
         db.Product.findAll()
             .then(function(products) {
-                res.render('./products/productList', {products:products});
+                res.render('../src/views/products/productList', {products:products});
             })		
     },
 
@@ -20,7 +20,7 @@ const productsController = {
             include: [{association: 'category'}, {association: 'color'}, {association: 'size'}]
         })
             .then(function(product) {
-                res.render('./products/productDetail', {product});
+                res.render('../src/views/products/productDetail', {product});
             })
 	},
     
@@ -31,7 +31,7 @@ const productsController = {
         let findSizes = db.Size.findAll();
         Promise.all([findCategories, findColors, findSizes])
             .then(function([categories, colors, sizes]) {
-                return res.render('./products/productCreateForm', {
+                return res.render('../src/views/products/productCreateForm', {
                     categories:categories,
                     colors:colors,
                     sizes:sizes
@@ -48,7 +48,7 @@ const productsController = {
             let findSizes = db.Size.findAll();
             Promise.all([findCategories, findColors, findSizes])
                 .then(function([categories, colors, sizes]) {
-                    return res.render('./products/productCreateForm', {
+                    return res.render('../src/views/products/productCreateForm', {
                         categories:categories,
                         colors:colors,
                         sizes:sizes,
@@ -79,7 +79,7 @@ const productsController = {
         let findSizes = db.Size.findAll();
         Promise.all([findProduct, findCategories, findColors, findSizes])
             .then(function([product, categories, colors, sizes]) {
-                res.render('./products/productEditForm', {
+                res.render('../src/views/products/productEditForm', {
                     product:product,
                     categories:categories,
                     colors:colors,
