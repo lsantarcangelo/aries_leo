@@ -88,11 +88,26 @@ const productsController = {
             })
     },
 
-    update: (req, res) => {
-        db.Product.update({
+    /* edit: async (req, res) => {
+        let findProduct = await db.Product.findByPk(req.params.id);
+        let findCategories = await db.Category.findAll();
+        let findColors = await db.Color.findAll();
+        let findSizes = await db.Size.findAll();
+        res.render('../src/views/products/productEditForm', {
+                    product:product,
+                    categories:categories,
+                    colors:colors,
+                    sizes:sizes
+                });
+    }, */
+
+
+    update: async (req, res) => {
+        let findProduct = await db.Product.findByPk(req.params.id);
+        await db.Product.update({
             'name': req.body.name,
             'description': req.body.description,
-            'product_img': req.file.filename,
+            'product_img': req.file == undefined ? findProduct.product_img : req.file.filename,
             'category_id': req.body.category,
             'color_id': req.body.color,
             'size_id': req.body.size,
