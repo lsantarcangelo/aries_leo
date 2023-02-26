@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator'); 
 const db = require('../../database/models');
@@ -88,6 +87,7 @@ const productsController = {
             })
     },
 
+    //Opcion realizada con async - await
     /* edit: async (req, res) => {
         let findProduct = await db.Product.findByPk(req.params.id);
         let findCategories = await db.Category.findAll();

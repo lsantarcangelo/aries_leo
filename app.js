@@ -4,6 +4,7 @@ const path = require('path');
 const mainRouter = require('./src/routers/mainRouter');
 const productsRouter = require('./src/routers/productsRouter');
 const usersRouter = require('./src/routers/usersRouter');
+const productsApiRouter = require('./src/routers/api/productsApiRouter')
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies =require('cookie-parser');
@@ -42,3 +43,6 @@ app.listen(PORT, () => {
 app.use('/',mainRouter);
 app.use('/products', productsRouter);
 app.use('/', usersRouter);
+
+//Apis
+app.use('/api/products', productsApiRouter);
