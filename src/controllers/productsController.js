@@ -13,6 +13,46 @@ const productsController = {
             })		
     },
 
+    //Listados por categorias//
+    man: (req, res) => {
+        db.Product.findAll({
+            where: {category_id: 1}
+        })
+        .then(products => {
+            res.render('../src/views/products/productListMan', {products: products})
+        })
+    },
+
+    woman: (req, res) => {
+        db.Product.findAll({
+            where: {category_id: 2}
+        })
+        .then(products => {
+            res.render('../src/views/products/productListWoman', {products: products})
+            console.log(products)
+        })
+    },
+
+    kids: (req, res) => {
+        db.Product.findAll({
+            where: {category_id: 3}
+        })
+        .then(products => {
+            res.render('../src/views/products/productListKids', {products: products})
+            console.log(products)
+        })
+    },
+
+    accesories: (req, res) => {
+        db.Product.findAll({
+            where: {category_id: 4}
+        })
+        .then(products => {
+            res.render('../src/views/products/productListAccesories', {products: products})
+            console.log(products)
+        })
+    },
+
     //Detalle de un producto//
 	detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
