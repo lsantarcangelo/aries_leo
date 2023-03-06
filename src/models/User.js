@@ -1,9 +1,4 @@
 
-//4. esitar la info. del usuario
-
-
-// const { createHash } = require('crypto');
-// const { text } = require('express');
 const fs = require('fs');
 
 const user = {

@@ -143,5 +143,15 @@
   "password": "$2a$10$4be5jUjUv20f2P9DNxyh5.jzNpt2Nb45mx3Zm.o9czX38MJdrMJJ.",
   "passConfirm": "$2a$10$tPIYaescH3.8fBy/2W25mukdjMJtXG1w6UlT/EOcpwCll5bDyTQ5e",
   "image": "1675194443581_img.jpg"
+ },
+ {
+  "id": 17,
+  "firstName": "John",
+  "lastName": "Lennon",
+  "category": "Customer",
+  "email": "j.lennon@gmail.com",
+  "password": "$2a$10$ZU5SJ/h7cH6/pAZs6ejtSemBlZuzW9nSrV/1CIRKT8dVC5eoa8EL.",
+  "passConfirm": "$2a$10$KjJ/H..WSCZOO4N005omP.vyvfLGwwY5BQcW5eWNDKMySbaJebdMO",
+  "image": "1678057836158_img.jpeg"
  }
 ]

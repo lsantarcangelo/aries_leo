@@ -5,14 +5,14 @@ const User = require('../models/User');
 
 const controller = {
 	register: (req, res) => {
-		return res.render('../views/users/register');
+		return res.render('../src/views/users/register');
 	},
 	processRegister: (req, res) => {
 
 		const resultValidation = validationResult(req);
 				
 			if (resultValidation.errors.length > 0) {
-				return res.render('../views/users/register', {
+				return res.render('../src/views/users/register', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
@@ -21,7 +21,7 @@ const controller = {
 		let userInDB = User.findByField('email', req.body.email);
 
 		if (userInDB) {
-			return res.render('../views/users/register', {
+			return res.render('../src/views/users/register', {
 				errors: {
 					email: {
 						msg: 'Este correo electronico ya se encuentra registrado'
@@ -40,18 +40,18 @@ const controller = {
 		
 		User.create(userTOCreate);
 
-		return res.render('../views/users/login')
+		return res.render('../src/views/users/login')
 
 	},
 	login: (req, res) => {
-		return res.render('../views/users/login');
+		return res.render('../src/views/users/login');
 	},
 
 	loginProcess: (req, res) => {
 		const resultValidation = validationResult(req);
 				
 			if (resultValidation.errors.length > 0) {
-				return res.render('../views/users/login', {
+				return res.render('../src/views/users/login', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
@@ -72,7 +72,7 @@ const controller = {
 
 				return res.redirect('/');
 			} 
-			return res.render('../views/users/login', {
+			return res.render('../src/views/users/login', {
 				errors: {
 					email: {
 						msg: 'Los datos no coinciden'
@@ -81,7 +81,7 @@ const controller = {
 			});
 		}
 
-		return res.render('../views/users/login', {
+		return res.render('../src/views/users/login', {
 			errors: {
 				email: {
 					msg: 'Este correo electrónico no esta asociado a ninguna cuenta'
@@ -91,7 +91,7 @@ const controller = {
 	},
 	
 	profile: (req, res) => {
-		return res.render('../views/users/userProfile', {
+		return res.render('../src/views/users/userProfile', {
 			userProfile: req.session.userLogged
 		});
 	},

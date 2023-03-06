@@ -29,7 +29,6 @@ const productsController = {
         })
         .then(products => {
             res.render('../src/views/products/productListWoman', {products: products})
-            console.log(products)
         })
     },
 
@@ -39,7 +38,6 @@ const productsController = {
         })
         .then(products => {
             res.render('../src/views/products/productListKids', {products: products})
-            console.log(products)
         })
     },
 
@@ -49,7 +47,6 @@ const productsController = {
         })
         .then(products => {
             res.render('../src/views/products/productListAccesories', {products: products})
-            console.log(products)
         })
     },
 

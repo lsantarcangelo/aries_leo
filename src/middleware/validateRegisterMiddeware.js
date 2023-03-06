@@ -13,7 +13,7 @@ const validations = [
         .custom((value, {req}) => value === req.body.password).withMessage("Las contraseña no coincide"),
     body('image').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png'];
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png'];
         if(!file) {
             throw new Error('Debe cargar una imagen');
         } else {
