@@ -20,14 +20,14 @@
     <!-- Inicio de Cabecera del Sitio -->
     <%- include('../partials/header') %>
     <main>
-        <h2>ACCESO A ADMINISTRADOR</h2>
-        <h3>AGREGAR ARTICULOS</h3>
+        
         <div class="product-errors">
             <ul></ul>
         </div>
         <!-- Formulario  -->
         <div class="registro">
             <form action="/products/create" method="POST" enctype="multipart/form-data" class="productsForm">
+                <h2>Agregar Productos</h2>
                 <div>
                     <label>Nombre del producto</label>
                     <input type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>">
@@ -126,10 +126,8 @@
                         </div>
                     <% } %>
                 </div>
-                <div class="register-but">
-                    <input type="submit" class= "submit" value="Agregar al listado">
-                    <input type="reset" class= "reset" value="Cancelar">
-                </div>
+                <br>
+                <button type="submit">Agregar al Listado</button>
             </form>
         </div>
 

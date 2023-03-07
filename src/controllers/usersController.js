@@ -91,7 +91,7 @@ const controller = {
 	},
 	
 	profile: (req, res) => {
-		return res.render('../src/views/users/userProfile', {
+		return res.render('../src/views/users/userProfileAlt', {
 			userProfile: req.session.userLogged
 		});
 	},
