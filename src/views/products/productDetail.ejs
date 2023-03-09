@@ -29,23 +29,30 @@
 
                     <p> <%= product.description %>  </p>
 
-                    <div class="listacolor">
+                    <div class="lista-detalle">
+                        <h3>CATEGORIA</h3>
+                        <p><%= product.category.name %> </p>
+                    </div>
+
+                    <div class="lista-detalle">
                         <h3>COLOR</h3>
                         <p><%= product.color.name %> </p>
                     </div>
 
-
-                    <div class= "listatalle">
+                    <div class= "lista-detalle">
                         <h3>TALLE</h3>
                         <p><%= product.size.name %> </p>
                     </div>
 
 
                     <div class="botoncompra">
-                        <input type="submit" class="submit" value="Agregar al carrito">
-                        <a href="/products/edit/<%= product.id %> ">
+                        <button type="submit" class="submit">Agregar al carrito</button>
+                        <!-- <a href="">
                             Editar
-                        </a>
+                        </a> -->
+                        <form action="/products/edit/<%= product.id %>">
+                            <button type="submit" class="button-delete">Editar</button>
+                        </form>
                         <form action="/products/delete/<%= product.id%>" method="POST">
                             <button type="submit" class="button-delete">Eliminar</button>
                         </form>

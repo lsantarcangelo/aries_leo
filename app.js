@@ -5,6 +5,7 @@ const mainRouter = require('./src/routers/mainRouter');
 const productsRouter = require('./src/routers/productsRouter');
 const usersRouter = require('./src/routers/usersRouter');
 const productsApiRouter = require('./src/routers/api/productsApiRouter')
+const userLoggedMiddleware= require('./src/middleware/userLoggedMiddleware');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies =require('cookie-parser');
@@ -20,13 +21,12 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(cookies());
 app.use(session({
-    secret: 'secreto!!!',
+    secret: 'secret',
     resave: false,
     saveUninitialized: false,
 }));
 
 //Middlewares de aplicacion
-const userLoggedMiddleware= require('./src/middleware/userLoggedMiddleware');
 app.use(userLoggedMiddleware);
 
 //Motor de vistas

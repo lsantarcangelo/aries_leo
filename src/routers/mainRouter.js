@@ -6,9 +6,12 @@ const mainController = require('../controllers/mainController');
 //Rutas
 router.get('/', mainController.index);
 
-router.get('/productCart', (req, res)=>{
-    res.render('../views/products/productCart')
-});
+router.get('/contact', mainController.contact);
 
+router.get('/about', mainController.about);
+
+// router.get('/productCart', (req, res)=>{
+//     res.render('../views/products/productCart')
+// });
 
 module.exports = router

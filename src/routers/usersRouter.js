@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const path = require('path');
 // controlers
 const usersController = require('../controllers/usersController');
@@ -22,13 +21,13 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', uploadFile.single('image'), validations, usersController.processRegister);
 
 //Login de usuario
-router.get('/login',guestMiddleware , usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
 //Procesar login de usuario
 router.post('/login', validateLogin, usersController.loginProcess);
 
 //Perfil de usuario
-router.get('/userProfile',authMiddleware , usersController.profile);
+router.get('/userProfile', authMiddleware, usersController.profile);
 
 // Logout
 router.get('/logout/', usersController.logout);

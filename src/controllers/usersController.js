@@ -1,6 +1,5 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator'); 
-
 const User = require('../models/User');
 
 const controller = {
@@ -60,7 +59,6 @@ const controller = {
 
 		let userToLogin = User.findByField('email', req.body.email);
 		if(userToLogin) {
-			
 			let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
 			if (correctPassword) {
 				delete userToLogin.password;
@@ -69,7 +67,6 @@ const controller = {
 				if(req.body.recordame) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				}
-
 				return res.redirect('/');
 			} 
 			return res.render('../src/views/users/login', {

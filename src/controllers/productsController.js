@@ -156,7 +156,7 @@ const productsController = {
                 id: req.params.id
             }
         })
-		res.redirect('/');
+		res.redirect('/products');
     },
 
     //Eliminar Producto

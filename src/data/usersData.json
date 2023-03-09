@@ -153,5 +153,25 @@
   "password": "$2a$10$ZU5SJ/h7cH6/pAZs6ejtSemBlZuzW9nSrV/1CIRKT8dVC5eoa8EL.",
   "passConfirm": "$2a$10$KjJ/H..WSCZOO4N005omP.vyvfLGwwY5BQcW5eWNDKMySbaJebdMO",
   "image": "1678057836158_img.jpeg"
+ },
+ {
+  "id": 18,
+  "firstName": "admin",
+  "lastName": "admin",
+  "category": "customer",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$NdBZ6PfxOuGBQbt2FOQXw.F2g1SuErh7weLHIJDLz6Xl5Okcvd26m",
+  "passConfirm": "$2a$10$bycGaWyAWi5OQKc19wHSferNwekdi/1YUYdRAOhSuJkIyfCicKD9S",
+  "image": "1678222712483_img.png"
+ },
+ {
+  "id": 19,
+  "firstName": "Carlos",
+  "lastName": "Sanchez",
+  "category": "customer",
+  "email": "carlos@gmail.com",
+  "password": "$2a$10$e7F7JXwrKA5KpPFBRJkTSeTdMU8WN0Q691V1HUTxod.L0ubloa2U2",
+  "passConfirm": "$2a$10$57NddAYsqWUTL6OIg.iyZegUSC.HnE1h5Jp/wNen3mDtzlfm5XuE2",
+  "image": "1678316634540_img.png"
  }
 ]

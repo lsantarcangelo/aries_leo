@@ -49,15 +49,7 @@
     margin: auto;
 }
 
-.listacolor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    width: 100%;
-    margin: auto;
-}
-
-.listatalle {
+.lista-detalle {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
@@ -73,28 +65,20 @@
     font-size: 0.6rem;
 }
 
-.botoncompra [type="submit"]{
-    color: #eae8e5;
-    font-weight: 500;
-    background-color: #25363d;  
-    font-size: 0.8rem;
-    margin-top: 10px;
+button[type="submit"] {
+    background-color: #25363d;
+    color: #fff;
+    margin-left: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.botoncompra :hover{
-    background-color: #64747c;
+button[type="submit"]:hover {
+    background-color: #384f57;
 }
-
-.botoncompra a{
-    width: 60px;
-    margin: 10px 0 0 5px;
-    padding: 2px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #eae8e5;
-    background-color: #25363d; 
-}
-
 
 .path h6{
     width: 100%;
@@ -116,30 +100,26 @@
 
 .texto_detalle h2{
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-top: 0px;
     font-weight: 800 ;
     font-size: 1rem;
     color: #343434;
 }
 
-.listacolor h3{
+.lista-detalle h3{
     width: 100%;
-    margin-bottom: 10px;
-    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-top: 10px;
     font-weight: 800 ;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     color: #343434;
 }
 
-.listatalle h3{
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: 800 ;
-    font-size: 0.6rem;
-    color: #343434;
+.lista-detalle p {
+    font-size: 0.8rem;
 }
+
 
 
 /*Media query para Tablet*/
@@ -193,53 +173,14 @@
 
     }
     
-    .listacolor {
+    .lista-detalle {
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
         width: 100%;
         margin: auto;
     }
-    
-    .listatalle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-between;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .botoncompra {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        font-size: 0.6rem;
-    }
-    
-    .botoncompra [type="submit"]{
-        color: #eae8e5;
-        font-weight: 500;
-        background-color: #25363d;  
-        font-size: 0.8rem;
-        margin-top: 10px;
-       }
-       
-       .botoncompra[type="submit"]:hover{
-           background-color: #64747c;
-       }
 
-.botoncompra a{
-    width: 70px;
-    margin: 10px 0 0 5px;
-    padding: 2px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #eae8e5;
-    background-color: #25363d; 
-}
-    
-    
     .path h6{
         width: 100%;
         margin-bottom: 20px;
@@ -267,27 +208,24 @@
         color: #343434;
     }
     
-    .listacolor h3{
+    .lista-detalle h3{
         width: 100%;
-        margin-bottom: 10px;
-        margin-top: 0px;
-        font-weight: 800 ;
-        font-size: 0.6rem;
-        color: #343434;
-    }
-    
-    .listatalle h3{
-        width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         margin-top: 10px;
         font-weight: 800 ;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         color: #343434;
     }
+
+    .lista-detalle p {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
 }
 
 
-/*Media query para Tablet*/
+/*Media query para Desktop*/
 @media (min-width: 1024px){
 
     .container_detalle{
@@ -338,52 +276,13 @@
 
     }
     
-    .listacolor {
+    .lista-detalle {
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
         width: 100%;
         margin: auto;
     }
-    
-    .listatalle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-between;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .botoncompra {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        font-size: 0.6 rem;
-    }
-    
-    .botoncompra [type="submit"]{
-        color: #eae8e5;
-        font-weight: 500;
-        background-color: #25363d;  
-        font-size: 1.5rem;
-        margin-top: 30px;
-       }
-       
-       .botoncompra[type="submit"]:hover{
-           background-color: #64747c;
-       }
-
-.botoncompra a{
-    width: 90px;
-    margin: 30px 0 0 5px;
-    padding: 2px;
-    text-align: center;
-    font-size: 1.4rem;
-    color: #eae8e5;
-    background-color: #25363d; 
-}
-    
     
     .path h6{
         width: 100%;
@@ -412,21 +311,13 @@
         color: #343434;
     }
     
-    .listacolor h3{
+    .lista-detalle h3{
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 8px;
         margin-top: 20px;
         font-weight: 800 ;
         font-size: 1rem;
         color: #343434;
     }
-    
-    .listatalle h3{
-        width: 100%;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        font-weight: 800 ;
-        font-size: 1rem;
-        color: #343434;
-    }
+
 }

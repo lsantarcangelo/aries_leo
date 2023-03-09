@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="../../../css/styles.css">
 <link rel="stylesheet" href="../../../css/header.css">
 <link rel="stylesheet" href="../../../css/footer.css">
+<link rel="stylesheet" href="../../../css/productList.css">
 </head>
 
 <body>
@@ -15,10 +16,11 @@
         <!-- Seccion tipo tarjetas con Categorias de Productos -->
         <div class="container products-wrapper">
             <div class="row">
-                <div id="man">
+                <div id="category-box">
                     <div class="col-12">
                         <h2 class="products-title">MUJERES</h2>
                     </div>
+                    <div class="big-box">
                     <% products.forEach((product) => { %>
                         <% if (product.category_id == 2) { %>
                             <div class="col-12 col-sm-6 col-lg-3">
@@ -36,6 +38,7 @@
                             </div>
                         <% } %>
                     <% }) %>
+                </div>
                 </div>
 
 

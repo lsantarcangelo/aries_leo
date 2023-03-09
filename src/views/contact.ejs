@@ -1,0 +1,31 @@
+<!-- Head -->
+<%- include('./partials/head') %>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/contact.css">
+</head>
+<body>
+    <!-- Inicio de Cabecera del Sitio -->
+    <%- include('./partials/header') %>
+    <form action="#" method="POST">
+    <h2>Contactanos</h2>
+    <br>
+    <label for="contactName">Nombre</label>
+    <input type="text" id="contactName" name="contactName" placeholder="Ingresá tu nombre..">
+    
+    <label for="contactEmail">Email</label>
+    <input type="text" id="contactEmail" name="contactEmail" placeholder="Ingresá tu email..">
+    
+    <label for="contactSubject">Asunto</label>
+    <input type="text" id="contactSubject" name="contactSubject" placeholder="Asunto..">
+    
+    <label for="contactMessage">Mensaje</label>
+    <textarea id="contactMessage" name="contactMessage" placeholder="Escribí tu mensaje aquí.." style="height:200px"></textarea>
+    
+    <button type="submit">Enviar</button>
+    </form>
+    <!-- Footer del Sitio -->
+    <%- include('./partials/footer') %>
+</body>
+</html>
