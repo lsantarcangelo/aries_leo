@@ -56,6 +56,12 @@ input[type="text"] {
     color: #25363d;
 }
 
+.account-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
 .nav-bar {
     display: none;
 }
@@ -81,18 +87,15 @@ input[type="text"] {
     }
 
     .account-item {
+        display: flex;
         width: 35%;
         margin: 0 auto;
     }
 
     .account-item img {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         border-radius: 100%;
-    }
-
-    .account-item-avatar {
-        
     }
 
     .account-item i {

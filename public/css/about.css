@@ -1,4 +1,13 @@
+.about {
+    display: flex;
+    width: 55%;
+    margin: 0 auto;
+}
 
+.about img {
+    width: 220px;
+    height: 220px;
+}
 
 main {
     background-color: #f2f0ea;

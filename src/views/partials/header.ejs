@@ -19,15 +19,9 @@
         <div class="account">                      
             <% if (locals.isLogged) { %>
                 <div class="account-item">
-                    <i>
-                        <img src="\images\users\<%= locals.userLogged.image %>">
-                    </i>
-                    <p> Hola <%= locals.userLogged.firstName %></p>
-                </div>
-                <div class="account-item">
                     <a class="nav-link" href="/userProfile">
-                        <i class="fas fa-user"></i>
-                        <p>Mi cuenta</p>
+                        <i><img src="\images\users\<%= locals.userLogged.image %>"></i>
+                        <p> Hola <%= locals.userLogged.firstName %></p>
                     </a>
                 </div>
                 <div class="account-item">
